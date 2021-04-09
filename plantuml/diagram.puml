@@ -1,0 +1,18 @@
+@startuml
+rectangle User {
+skinparam actorStyle awesome
+:people: -> (Smart Phone) 
+(Smart Phone) -> (Internet) 
+}
+
+rectangle Instagram {
+(Internet) -down->  (Login)
+(Photo) <-left- (Login)
+(Photo) -right-> (Post) 
+}
+
+rectangle Opstacle  {
+(No Internet) .left.> (Login)  : Obstruct
+(Application Error) .right.> (Post) : Obstruct
+}
+@enduml
